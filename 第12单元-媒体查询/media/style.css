@@ -1,0 +1,12 @@
+    .move{
+        width:500px;
+        height:500px;
+        background:red;
+    }
+
+/*@media screen and (min-width: 1080px)  and (max-width: 1200px) {
+    .move {
+        background:yellow;
+        transform: translate(500px,500px) rotate(45deg);
+    }
+}*/

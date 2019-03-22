@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="mycanvas" width="300" height="300" style="border:1px solid #000000;">
+		
+	</canvas>
+
+	<script type="text/javascript">
+		function draw(){
+			//获取画布
+	        var canvas = document.getElementById('mycanvas');
+	        //定义画笔
+	        var ctx = canvas.getContext("2d");
+	        //设置起始坐标
+	        ctx.moveTo(0,0);
+	        //设置结束坐标
+			ctx.lineTo(150,150);
+			//绘制图形
+			ctx.stroke();
+	    }
+	    draw();
+	</script>
+</body>
+</html>

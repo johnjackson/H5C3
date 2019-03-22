@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="mycanvas" width="300" height="300" style="border:1px solid #000000;">
+
+	</canvas>
+
+	<script type="text/javascript">
+		function draw(){
+			//获取画布
+	        var canvas = document.getElementById('mycanvas');
+	        //定义画笔
+	        var ctx = canvas.getContext("2d");
+
+	        ctx.beginPath();
+	        //设置圆形
+			ctx.arc(95,50,40,0,2*Math.PI);
+			ctx.stroke();
+
+			// ctx.beginPath();
+			// ctx.arc(195,50,40,0,2*Math.PI);
+			// //绘制图像
+			// ctx.stroke();
+
+
+			ctx.beginPath(); //开始一个新路径
+			ctx.arc(195,50,40, 1.5*Math.PI, 1*Math.PI, false);
+			//绘制图像
+			ctx.stroke();
+			// ctx.fillStyle="#FF0000";
+			// ctx.fill();
+
+	    }
+	    draw();
+	</script>
+</body>
+</html>

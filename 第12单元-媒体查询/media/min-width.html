@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" media="screen and (min-width: 1080px)" href="style.css">
+
+<style>
+	.move{
+		width:500px;
+		height:500px;
+		background:red;
+	}
+
+    @media screen and (min-width: 1080px) and (max-width:  1200px) {
+        .move {
+            background: yellow;
+            transform: translate(500px,500px) rotate(45deg);
+        }
+    }
+</style>
+</head>
+<body>
+	<div id='box' class='move'></div>
+</body>
+</html>

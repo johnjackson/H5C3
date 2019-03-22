@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="300" height="300" style="border:1px solid #000000;">
+    </canvas>
+
+    <script type="text/javascript">
+        //获取画布
+        var canvas = document.getElementById('mycanvas');
+        //定义画笔
+        var ctx = canvas.getContext("2d");
+
+        ctx.font="30px Arial";
+        ctx.fillText("Hello World",0,30); //后面的x,y参数其实是文字左下角的那个点的坐标。
+
+        // ctx.font="30px Arial";
+        ctx.strokeText("Hello World 2", 0, 60);
+    </script>
+</body>
+</html>

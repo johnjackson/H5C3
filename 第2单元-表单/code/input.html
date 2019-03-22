@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <form id="form1" action="#" novaldate>
+        <input type="text" placeholder="我是默认值xxxxxxxxx" pattern="\d{3}" /> <br/>
+        email<input type="email" form="form1" name="email" autocomplete="on" required autofocus /><br />
+        url<input type="url" name="url" required /><br />
+        date<input type="date" /><br />
+        time<input type="time" name="time" /><br />
+        week<input type="week" /><br />
+        range<input type="range" name="range" min="1" max="10" step="3" /><br />
+        color<input type="color" name="color" /><br />
+        number<input type="number" name="number" min="10" max="100" step="3" /><br />
+        search<input type="search" list="xxx" name="search" /><br />
+
+        file <input type="file" multiple />
+        <br>
+        <datalist id="xxx">
+            <option label="W3Schools" value="http://www.w3schools.com" />
+            <option label="Google" value="ggggggggg" />
+            <option label="Microsoft" value="http://www.microsoft.com" />
+        </datalist>
+        <!-- Webpage: <input type="url" list="url_list" name="link" />
+             -->
+        <br />
+        <button type="submit">提交</button>
+    </form>
+</body>
+
+</html>

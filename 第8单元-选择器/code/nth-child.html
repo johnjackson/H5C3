@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        /*
+        div[foo~="bbb"] {
+            color: red;
+        }
+        */
+        span:nth-child(2) {
+            color: green;
+        }
+        span:nth-last-child(2) {
+            color: green;
+        }
+
+        /*
+        span:first-of-type {
+            color: blue;
+        }
+        span:nth-of-type(3) {
+            color: yellow;
+        }
+        span:nth-last-of-type(2) {
+            color: #f0f;
+        }*/
+        /*
+        #ha:before {
+            content:"2016-5-24";
+            background: red;
+        }
+        #ha:after {
+            content:"2016-5-24";
+            background: red;
+        }
+        */
+        #d1:before{
+            content: counter(a);
+            counter-increment:a;
+        }
+        #d2:before{
+            content: counter(a);
+            /*counter-increment:a;*/
+        }
+
+        /*
+        dl { counter-reset:c1 0;}
+        dt { counter-increment: c1 1; }
+        dt:before{ content:counter(c1)"、";}
+
+        dd{ counter-increment:c2;}
+        dd:before{
+           content:counter(c1)"-"counter(c2)"、";
+        }
+        */
+    </style>
+</head>
+<body>
+    <div foo="aaa bbb ccc">xxxxxxxxxxxx</div>
+    <div>
+        <span>111</span>
+        <span>222</span>
+        <span>333</span>
+        <span>444</span>
+        <span>555</span>
+    </div>
+
+    <dl>
+        <dt>example</dt>
+        <dd>example</dd>
+        <dd>example</dd>
+        <dd>example</dd>
+        <dt>example2</dt>
+        <dd>example2</dd>
+        <dd>example2</dd>
+        <dd>example2</dd>
+        <dd>example2</dd>
+    </dl>
+</body>
+</html>

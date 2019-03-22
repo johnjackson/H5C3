@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <link rel="stylesheet"  href="style.css"> -->
+    <style>
+    </style>
+</head>
+
+<body>
+    <form>
+        手机号：<input id="tel_input" type="text">
+        <br>
+        验证码：<input id="capcha_input" type="text">
+        <canvas id="capcha" width="100" height="50" style="border:1px solid #000000;">
+            您的浏览器不支持 HTML5 canvas 标签。
+        </canvas>
+        <!-- <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+        您的浏览器不支持 HTML5 canvas 标签。</canvas> -->
+        <a id="get_capcha" style="cursor: pointer;">换一张</a>
+        <br>
+        校验码：<input type="text"><button id="vcode">校验码</button>
+        <br>
+        <button class="submit-btn">提交s</button>
+    </form>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        console.log('aa')
+        $.getJSON("./vcode.json", function(data){
+                console.log(data);
+                console.log('sss')
+                //使用$.each方法遍历返回的数据date,插入到id为#result中
+                // var str = "<ul>";
+                // $.each(data.list, function(i, n) {
+                //     str += "<li>" + n["item"] + "</li>";
+                // })
+                // str += "</ul>";
+                // $("#test").append(str);
+        });
+        console.log('bb')
+        drawCapcha();
+
+        $('#get_capcha').on('click', function() {
+            drawCapcha();
+        });
+
+
+    });
+
+    function drawCapcha() {
+        var code = 111;
+        var capcha = document.getElementById('capcha');
+        var ctx = capcha.getContext('2d');
+        ctx.font = "30px Arial";
+        ctx.fillText(code, 10, 35);
+    }
+    </script>
+</body>
+
+</html>

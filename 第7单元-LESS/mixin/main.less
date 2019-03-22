@@ -1,0 +1,16 @@
+.bordered(){
+    border:1px solid black;
+}
+@width:50%;
+@color:red;
+#box{
+	width:@width;
+	height:@width;
+	background:@color;
+	.bordered;
+}
+
+#hello{
+	width:@width+@width;
+	.bordered;
+}

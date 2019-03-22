@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://www.cnblogs.com/tianma3798/p/5895811.html -->
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <canvas id="mycanvas" width="300" height="300" style="border:1px solid #000000;"></canvas> -->
+    <canvas id="canvas1" width="400" height="400" style="border:1px solid blue;"></canvas>
+    <script type="text/javascript">
+    function draw() {
+        //获取画布
+        var canvas = document.getElementById('mycanvas');
+        //定义画笔
+        var ctx = canvas.getContext("2d");
+
+        // 创建渐变
+        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+
+        // 填充渐变
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 10, 150, 80);
+    }
+    // draw();
+
+    function draw2() {
+        var canvas = document.getElementById('canvas1');
+        var ctx = canvas.getContext('2d');
+
+        //1.当cycle1在cycle2里边时，并且圆心重合
+        // var cycle1 = {
+        //     x: 200,
+        //     y: 200,
+        //     r: 20
+        // };
+        // var cycle2 = {
+        //     x: 200,
+        //     y: 200,
+        //     r: 80
+        // };
+        // 2.当cycle1在cycle2里边时，圆心不重合
+        // var cycle1 = {
+        //     x: 160,
+        //     y: 160,
+        //     r: 20
+        // };
+        // var cycle2 = {
+        //     x: 200,
+        //     y: 200,
+        //     r: 80
+        // };
+
+        // 3.当cycle2在cycle1里边时，圆心不重合时
+        // var cycle2 = {
+        //     x: 160,
+        //     y: 160,
+        //     r: 20
+        // };
+        // var cycle1 = {
+        //     x: 200,
+        //     y: 200,
+        //     r: 80
+        // };
+
+        // 4.当cycle1和cycle2相离时，并且大小不相同
+        // var cycle1 = {
+        //     x: 60,
+        //     y: 60,
+        //     r: 20
+        // };
+        // var cycle2 = {
+        //     x: 200,
+        //     y: 200,
+        //     r: 80
+        // };
+        // var cycle2 = {
+        //     x: 60,
+        //     y: 60,
+        //     r: 20
+        // };
+        // var cycle1 = {
+        //     x: 200,
+        //     y: 200,
+        //     r: 80
+        // };
+
+        // 两个圆大小相等情况下
+
+		// 1.当cycle1和cycle2相离时，并且大小相同
+		// var cycle1 = {
+		//     x: 120,
+		//     y: 120,
+		//     r: 80
+		// };
+		// var cycle2 = {
+		//     x: 250,
+		//     y: 250,
+		//     r: 80
+		// };
+		// 2.当cycle1和cycle2相交时，并且大小相同
+		// var cycle1 = {
+		//     x: 120,
+		//     y: 120,
+		//     r: 80
+		// };
+		// var cycle2 = {
+		//     x: 200,
+		//     y: 200,
+		//     r: 80
+		// };
+		// 3.当cycle1和cycle2重合时，圆心相同，并且大小相同
+		var cycle1 = {
+			x: 200,
+			y: 200,
+			r: 80
+		};
+		var cycle2 = {
+		    x: 200,
+		    y: 200,
+		    r: 80
+		};
+
+        ctx.beginPath();
+        ctx.arc(cycle1.x, cycle1.y, cycle1.r, 0, Math.PI * 2, false);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(cycle2.x, cycle2.y, cycle2.r, 0, Math.PI * 2, false);
+        ctx.stroke();
+
+        //使用经向渐变
+        var grd = ctx.createRadialGradient(cycle1.x, cycle1.y, cycle1.r, cycle2.x, cycle2.y, cycle2.r);
+        grd.addColorStop(0, 'rgba(255,0,0,0.75)');
+        grd.addColorStop(0.5, 'rgba(0,255,0,0.75)');
+        grd.addColorStop(1, 'rgba(0,0,255,0.75)');
+
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, 400, 400);
+    }
+    draw2();
+    </script>
+</body>
+
+</html>

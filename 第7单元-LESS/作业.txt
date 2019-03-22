@@ -1,0 +1,27 @@
+作业
+理论题：4，7，8单元
+做技能直到七单元的
+自己机器上搭建less环境，并且把每一个less知识点实践一遍
+媒体播放器的程序完成
+
+单词：
+geoLocation 地理定位
+current 当前
+position 位置
+longitude 经度
+latitude 纬度
+accuracy 精度
+altitude 海拔
+heading 方向
+speed 速度
+timestamp 时间戳
+Permission 许可
+deny denied 拒绝
+unavailable 不可用
+Timeout 超时
+
+mixin 混合
+import 导入
+development 开发
+env enviroment 环境
+watch 看（监听）

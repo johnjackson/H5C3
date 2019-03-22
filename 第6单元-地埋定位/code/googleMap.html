@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="demo">点击这个按钮，获得您的坐标：</p>
+    <button onclick="getLocation()">试一下</button>
+    <div id="mapholder"></div>
+    <script>
+
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            console.log('get');
+            var options = {
+                enableHighAcuracy: false,// 更精确的查找，默认false
+                timeout: 10000, //获取位置允许最长时间，默认infinity
+                maximumAge: 0 //位置可以缓存的最大时间，默认0
+            };
+            navigator.geolocation.getCurrentPosition(showPosition, showError, options);
+        } else {
+            x.innerHTML = "此浏览器不支持地埋位置";
+        }
+    }
+
+    function showPosition(position) {
+        console.log('ok')
+        var latlon = position.coords.latitude + "," + position.coords.longitude;
+        // http://api.map.baidu.com/lbsapi/getpoint/index.html
+        var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" +
+            latlon + "&zoom=14&size=400x300&sensor=false";
+
+        document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "' />";
+    }
+
+    function showError(error) {
+        console.log('error')
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                x.innerHTML = "User denied the request for Geolocation."
+                break;
+            case error.POSITION_UNAVAILABLE:
+                x.innerHTML = "Location information is unavailable."
+                break;
+            case error.TIMEOUT:
+                x.innerHTML = "The request to get user location timed out."
+                break;
+            case error.UNKNOWN_ERROR:
+                x.innerHTML = "An unknown error occurred."
+                break;
+        }
+    }
+    </script>
+</body>
+
+</html>

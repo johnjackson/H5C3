@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .box {
+            position: relative;
+            height: 300px;
+            width: 100%;
+            border:1px solid #000;
+        }
+        .dino {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100px;
+            z-index: 2;
+        }
+        .jump {
+            animation: jump;
+            animation-timing-function: cubic-bezier(0, 0.17, 1, 0.85);
+        }
+        @keyframes jump {
+            0% {bottom: 0px;}
+            50% {bottom: 100px;}
+            100% {bottom: 0px;}
+        }
+        .tree {
+            position: absolute;
+            right: -100px;
+            bottom: 0;
+            width: 100px;
+            height: 60px;
+        }
+        .move {
+            animation: move 2.5s linear;
+        }
+        @keyframes move {
+            0% {right: 1px;}
+            100% {right: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img class="dino jump" src="./dino.png" width="100" />
+        <img class="tree" src="./tree.png" />
+    </div>
+    <script type="text/javascript">
+        function A() {
+            for (var i = 0; i < 10; i++) {
+                setTimeout(function() {
+                    console.log(i)
+                },100);
+            }
+        }
+        A();
+
+        let startTime = 0; //开始时间
+        let jumpDuration = 1000; //间隔时间
+        let timer;
+        let dino = document.getElementsByClassName('dino')[0];
+
+        dino.style.animationDuration = jumpDuration / 1000 + 's';
+
+        document.body.onkeyup = function(e) {
+            if(e.keyCode != 32) {
+                return;
+            }
+            let currentTime = Date.now();
+            if(currentTime - startTime >= jumpDuration){
+                dino.classList.add('jump');
+                // setTimeout(()=>{
+                //     console.log(dino.offsetTop)
+                //     if(dino.offsetTop > 240){
+                //         alert('游戏结束');
+                //     }
+                // }, 700);
+                // setTimeout(()=>{
+                //     console.log(dino.offsetTop)
+                //     if(dino.offsetTop > 240){
+                //         alert('游戏结束');
+                //     }
+                // }, 800);
+                // setTimeout(()=>{
+                //     console.log(dino.offsetTop)
+                //     if(dino.offsetTop > 240){
+                //         alert('游戏结束');
+                //     }
+                // }, 900);
+                timer = setTimeout(function(){
+                    dino.classList.remove('jump');
+                    clearTimeout(timer);
+                    timer = null;
+                }, jumpDuration);
+                startTime = currentTime;
+            }
+        }
+
+        treeMove();
+        let move = setInterval(treeMove, 3000);
+        function treeMove() {
+            let tree = document.getElementsByClassName('tree')[0];
+            tree.classList.add('move');
+
+            setTimeout(()=>{
+                console.log(tree.offsetLeft)
+                if(dino.offsetTop > 150){
+                    alert('游戏结束');
+                }
+            }, 2200);
+
+            //清除动画
+            let timer = setTimeout(function(){
+                tree.classList.remove('move');
+                clearTimeout(timer);
+                timer = null;
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+</head>
+<body>
+    <div align="center">
+        <button onclick="play()">play</button>
+        <button onclick="pause()">pause</button>
+        <button onclick="load()">load</button>
+        <video id="myVideo" src="./video/lk.mp4" width="800" height="448" controls="controls" >
+        您的浏览器暂不支持video标签。播放视频
+        </video>
+    </div>
+
+    <script type="text/javascript">
+        function play() {
+            var v = document.getElementById('myVideo');
+            v.play();
+        }
+        function pause() {
+            var v = document.getElementById('myVideo');
+            v.pause();
+        }
+        function load() {
+            var v = document.getElementById('myVideo');
+            v.load();
+        }
+
+    </script>
+</body>
+</html>

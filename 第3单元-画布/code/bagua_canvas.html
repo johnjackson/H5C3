@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        #mycanvas {
+            animation: 4s zhuan infinite linear;
+        }
+        @keyframes zhuan {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" width="200" height="200"></canvas>
+    <script type="text/javascript">
+        var c = document.getElementById('mycanvas');
+        ctx = c.getContext('2d');
+        // ctx.lineWidth=1;
+
+        //画个大圆
+        ctx.beginPath();
+        ctx.arc(100, 100, 100, 0, 2*Math.PI);
+        ctx.stroke();
+
+        //画左半圆 (黑色)
+        ctx.beginPath();
+        ctx.arc(100, 100, 100, 0.5*Math.PI, 1.5*Math.PI);
+        ctx.fillStyle = '#000';
+        ctx.fill();
+
+        //画上半部分小圆
+        ctx.beginPath();
+        ctx.arc(100, 50, 50, 0.5*Math.PI, 1.5*Math.PI);
+        ctx.stroke();
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+
+        //画下半部分小圆
+        ctx.beginPath();
+        ctx.arc(100, 150, 50, 0, 2*Math.PI);
+        ctx.stroke();
+        ctx.fillStyle = '#000';
+        ctx.fill();
+
+        //画上面的小圆点
+        ctx.beginPath();
+        ctx.arc(100, 50, 10, 0, 2*Math.PI);
+        ctx.stroke();
+        ctx.fillStyle = '#000';
+        ctx.fill();
+
+        // 画下面的小圆点
+        ctx.beginPath();
+        ctx.arc(100, 150, 10, 0, 2*Math.PI);
+        ctx.stroke();
+        ctx.fillStyle = '#fff';
+        ctx.fill();
+    </script>
+</body>
+</html>

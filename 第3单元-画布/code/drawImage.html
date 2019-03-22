@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://www.cnblogs.com/tianma3798/p/5895811.html -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>要使用的图像：</p>
+    <img id="logo" src="http://es6.ruanyifeng.com/images/cover_thumbnail_3rd.jpg" />
+    <p>画布：</p>
+    <canvas id="myCanvas" width="500" height="300" style="border:1px solid #d3d3d3;background:#ffffff;"></canvas>
+    <script type="text/javascript">
+    function draw() {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        var img = document.getElementById("logo");
+        //语法 1 drawImage(img,x,y);
+        // ctx.drawImage(img, 50, 50);
+
+        // 语法 2 drawImage(img,x,y,width,height);
+        // ctx.drawImage(img, 10, 10, 200, 200);
+
+        // 语法 3 drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+        // ctx.drawImage(img, 0, 0, 150, 200, 10, 10, 200,200);
+    }
+    setTimeout(draw, 500);
+    </script>
+</body>
+
+</html>

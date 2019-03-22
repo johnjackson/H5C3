@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border-radius</title>
+</head>
+<style type="text/css">
+	.box{
+		border:2px solid #a1a1a1;
+		padding:10px 40px;
+		background:#dddddd;
+		width:300px;
+	}
+	#box1{
+		border-radius:25px;
+	}
+	#box2{
+		border-radius:25%;
+	}
+	#box3{
+		border-top-left-radius: 2em 0.5em;
+		border-top-right-radius: 1em 3em;
+		border-bottom-right-radius: 4em 0.5em;
+		border-bottom-left-radius: 1em 3em;
+	}
+</style>
+<body>
+	<div id='box1' class="box">
+		<h1>这是px</h1>
+	</div>
+	<div id='box2' class="box">
+		<h1>这是%</h1>
+	</div>
+	<div id='box3' class="box">
+		<h1>这是两个值</h1>
+	</div>
+</body>
+</html>

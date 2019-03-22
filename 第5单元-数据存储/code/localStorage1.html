@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="utf-8"> 
+    <title>菜鸟教程(runoob.com)</title> 
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+    if (typeof(Storage) !== "undefined") {
+        // localStorage.myname="abcd";
+        console.log(localStorage.length)
+        localStorage.setItem('myname', 'abcd');
+        console.log(localStorage.length)
+        // 清空storage对象
+        // localStorage.clear();
+        document.getElementById("result").innerHTML = "网站名：" + localStorage.myname;
+        // 根据index获取storage的键名
+        // document.getElementById("result").innerHTML = "网站名：" + localStorage.key(0);
+        // sessionStorage 关闭标签数据就删除了
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+        } else {
+            sessionStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "在这个会话中你已经点击了该按钮 " + sessionStorage.clickcount + " 次 ";
+
+    } else {
+        document.getElementById("result").innerHTML = "对不起，您的浏览器不支持 web 存储。";
+    }
+    </script>
+</body>
+
+</html>
