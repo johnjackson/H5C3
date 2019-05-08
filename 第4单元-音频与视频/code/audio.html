@@ -8,52 +8,53 @@
 
 <body>
     <!-- src="./music/圣斗士.mp3" -->
-    <audio id="myAudio" controls>
+    <audio id="myAudio" src="./music/圣斗士.mp3" controls>
         <!-- <source src="horse.ogg" type="audio/ogg"> -->
         <!-- <source src="./music/MAKE-UP - オープニング・テーマ ペガサス幻想.mp3" type="audio/mpeg"> -->
     </audio><br>
 <!--     <button onclick="getCurTime()" type="button">获取</button>
     <button onclick="setCurTime()" type="button">设置时间点为 1 秒 </button> -->
+    <button id="btn">play</button>
+    <button id="ptn2">pause</button>
     <script>
     var v = document.getElementById("myAudio");
-
-    v.oncanplaythrough = function() {
-        console.log('oncanplaythrough');
-    }
-    v.oncanplay = function() {
-        console.log('oncanplay');
-    }
-    v.onended = function() {
-        console.log('onended');
-    }
-    v.onloadeddata = function() {
-        console.log('onloadeddata');
-    }
-    v.onloadedmetadata = function() {
-        console.log('onloadedmetadata');
-    }
-    v.onloadstart = function() {
-        console.log('onloadstart');
-    }
-
-    v.onplaying = function() {
-        console.log('onplaying');
-    }
-    v.onprogress = function() {
-        console.log('onprogress');
-    }
-    v.defaultPlaybackRate = 0.5;
-
-
-    v.src = "./music/圣斗士.mp3";
-    console.log(v.autoplay);
-    // function getCurTime() {
-    //     alert(x.currentTime);
+    // v.oncanplaythrough = function() {
+    //     console.log('oncanplaythrough');
+    // }
+    // v.oncanplay = function() {
+    //     console.log('oncanplay');
+    // }
+    // v.onended = function() {
+    //     console.log('onended');
+    // }
+    // v.onloadeddata = function() {
+    //     console.log('onloadeddata');
+    // }
+    // v.onloadedmetadata = function() {
+    //     console.log('onloadedmetadata');
+    // }
+    // v.onloadstart = function() {
+    //     console.log('onloadstart');
     // }
 
-    // function setCurTime() {
-    //     x.currentTime = 1;
+    // v.onplaying = function() {
+    //     console.log('onplaying');
     // }
+    // v.onprogress = function() {
+    //     console.log('onprogress');
+    // }
+    // v.defaultPlaybackRate = 0.5;
+
+
+    // v.src = "./music/圣斗士.mp3";
+    // // console.log(v.autoplay);
+    // // function getCurTime() {
+    // //     alert(x.currentTime);
+    // // }
+
+    // // function setCurTime() {
+    // //     x.currentTime = 1;
+    // // }
     </script>
 </body>
 

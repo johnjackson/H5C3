@@ -9,14 +9,19 @@
 <body>
     <script type="text/javascript">
     //1.查看是否支持localStorage
-    //console.log(window.localStorage)
-
+    console.log(window.localStorage)
+    // if(window.localStorage) {
+    //     alert('支持localStorage')
+    // }else{
+    //     alert('不支持localStorage')
+    // }
     //2.设置数据存储
-    localStorage.setItem('name','刘恒');
+    localStorage.setItem('name','超人');
+    localStorage.setItem('age','180');
 
-    //3.设置数据读取
-    var name = localStorage.getItem('name');
-    console.log(name)
+    // //3.设置数据读取
+    // var name = localStorage.getItem('name');
+    // console.log(name)
 
     // localStorage.setItem('score',15)
 

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    角数<input id="n" type="number" name="n" value="5"><br>
+    半径<input id="radius" type="number" name="" value="200"><br>
+    圆心:
+    <input id="x" type="number" name="" placeholder="x" value="250">
+    <input id="y" type="number" name="" placeholder="y" value="250">
+    <button id="gen">生成</button>
+    <br>
+    <canvas id="mycanvas" width="500" height="500" style="border:1px solid #000;"></canvas>
+
+    <script type="text/javascript">
+
+
+        var cxt = document.getElementById('mycanvas').getContext('2d');
+
+
+        document.getElementById('gen').onclick= function() {
+            cxt.clearRect(0,0,500,500);
+            cxt.beginPath();
+            // 弧度= 角度 * Math.PI / 180;
+            var n = document.getElementById('n').value - 0;
+            var radius = document.getElementById('radius').value - 0;
+            var x = document.getElementById('x').value - 0;
+            var y = document.getElementById('y').value - 0;
+            var du = 2*Math.PI/n;
+            var x_dis;
+            var y_dis;
+            var x1,y1;
+            var points = [];
+            // console.log(n)
+            for(let i = 1; i<=n; i++) {
+                let radian = i * du;
+                if(0 < radian && radian <= 0.5*Math.PI) {
+                    m_radian = 0.5*Math.PI - radian;
+                }else if(0.5*Math.PI < radian && radian <= Math.PI) {
+                    m_radian = radian - 0.5*Math.PI;
+                }else if(Math.PI < radian && radian <= 1.5*Math.PI) {
+                    m_radian = 1.5*Math.PI - radian;
+                }else if(1.5*Math.PI < radian && radian <= 2*Math.PI) {
+                    m_radian = radian - 1.5*Math.PI;
+                }
+                // console.log(radian * 180 / Math.PI);
+
+                y_dis = Math.sin(m_radian) * radius;
+                x_dis = Math.cos(m_radian) * radius;
+
+                if(0 < radian && radian <= 0.5 * Math.PI) {
+                    x1 = x + x_dis;
+                    y1 = y - y_dis;
+                }else if(0.5*Math.PI < radian && radian <= Math.PI) {
+                    x1 = x + x_dis;
+                    y1 = y + y_dis;
+                }else if(Math.PI < radian && radian <= 1.5*Math.PI) {
+                    x1 = x - x_dis;
+                    y1 = y + y_dis;
+                }else if(1.5*Math.PI < radian && radian <= 2*Math.PI) {
+                    x1 = x - x_dis;
+                    y1 = y - y_dis;
+                }
+                // console.log(y1);
+                // console.log(x1);
+                points.push({
+                    x: x1,
+                    y: y1
+                });
+            }
+            // console.log(points);
+            for (let i = 0; i < points.length; i++) {
+                // console.log('i',i)
+                for(let j=0; j < points.length; j++) {
+                    if(j == i) {
+                        continue;
+                    }else if(i == 0 && j == (points.length-1)) {
+                        continue;
+                    }else if(i==points.length-1 && j == 0){
+                        continue;
+                    }else if(j == (i+1) || j == (i-1) ) {
+                        continue;
+                    }
+                    // console.log('j',j)
+                    cxt.moveTo(points[i].x, points[i].y);
+                    cxt.lineTo(points[j].x, points[j].y);
+
+                    cxt.stroke();
+                }
+            }
+        };
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

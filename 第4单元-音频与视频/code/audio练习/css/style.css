@@ -9,6 +9,11 @@
     background-size: contain;
     display: inline-block;
     cursor: pointer;
+    transition: 1s transform;
+}
+
+.btn.big {
+    transform: scale(2);
 }
 .play_btn {
     background-image: url(../images/play.png);
@@ -16,6 +21,7 @@
 .pause_btn {
     background-image: url(../images/pause.png);
 }
+
 .prev_btn {
     background-image: url(../images/prev.png);
 }

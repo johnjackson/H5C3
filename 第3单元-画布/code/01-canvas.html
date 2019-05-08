@@ -10,8 +10,7 @@
 
     <!-- 创建画布 -->
     <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
-    </canvas>
-
+    sssssssssssssssssssssssss
     <!-- 下面这样写会拉伸 -->
     <!-- <canvas id="myCanvas" style="border:1px solid #000000; width: 300px; height: 300px;">
     </canvas> -->
@@ -19,23 +18,41 @@
     <script type="text/javascript">
         //JavaScript 使用 id 来寻找 canvas 元素：
         var c = document.getElementById("myCanvas");
+
+
+
         //然后，创建 context 对象：getContext("2d") 对象是内建的 HTML5 对象，拥有多种绘制路径、矩形、圆形、字符以及添加图像的方法。
         var cxt = c.getContext("2d");
-        cxt.fillStyle = "#0f0";
-        cxt.strokeStyle="#f00";
+
+        // cxt.arc(0,200,100,0, 0.5*Math.PI, true);
+        // cxt.strokeStyle = '#f00';
+
+        cxt.moveTo(15,15);
+        cxt.lineTo(115,115);
+        cxt.stroke();
+
+        cxt.beginPath()
+        cxt.lineTo(215,115);
+        cxt.lineTo(215,215);
+
+        cxt.stroke();
+        // cxt.fillRect(0,0, 100,100);
+        // cxt.fillStyle = '#0f0';
+        // cxt.fillStyle = "#0f0";
+        // cxt.strokeStyle="#f00";
         // cxt.fillRect(100, 100, 200, 150); //x,y ,width,height
 
         // cxt.moveTo(0,0);
         // cxt.lineTo(150,150);
-        cxt.beginPath();
-        cxt.arc( 150,150, 50, 0, Math.PI*1.5, true);
+        // cxt.beginPath();
+        // cxt.arc( 150,150, 50, 0, Math.PI*1.5, true);
 
-        cxt.moveTo(290,290);
-        cxt.lineTo(290, 250);
-        cxt.lineTo(250,250);
+        // cxt.moveTo(290,290);
+        // cxt.lineTo(290, 250);
+        // cxt.lineTo(250,250);
 
 
-        cxt.stroke();
+        // cxt.stroke();
         // cxt.fill();
 
 

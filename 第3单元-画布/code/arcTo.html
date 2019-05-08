@@ -14,22 +14,19 @@
     <script type="text/javascript">
         var c=document.getElementById("myCanvas");
         var ctx=c.getContext("2d");
-
-
-        ctx.strokeStyle = "rgba(0,0,0,0.5)";
+        // ctx.strokeStyle = "rgba(0,0,0,0.5)";
 
         // ctx.beginPath();
-        // ctx.moveTo(20,20);
+        // ctx.moveTo(20,20); // 创建水平线
         // ctx.lineTo(150,20);
         // ctx.lineTo(20,150);
 
         // ctx.stroke();
 
-        ctx.beginPath();
-        ctx.moveTo(20,20);           // 创建开始点
-        // // ctx.lineTo(100,20);          // 创建水平线
-        ctx.arcTo(150,20,20,150,30); // 创建弧
-        // // ctx.lineTo(150,120);         // 创建垂直线
+        // ctx.beginPath();
+        ctx.strokeStyle = "rgba(255,0,0,0.5)";
+        ctx.moveTo(100,20);           // 创建开始点
+        ctx.arcTo(150,20,20,150,40); // 创建弧
         ctx.stroke();                // 进行绘制
     </script>
 </body>
